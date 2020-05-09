@@ -1,0 +1,8 @@
+.idea/
+aim-client/aim-client.iml
+aim-client/target/
+aim-common/aim-common.iml
+aim-common/target/
+aim-server/aim-server.iml
+aim-server/target/
+aim.iml

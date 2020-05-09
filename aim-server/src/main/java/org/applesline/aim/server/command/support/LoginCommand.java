@@ -20,7 +20,7 @@ public class LoginCommand extends AbstractCommand implements ICommand {
         String uuid = AimUtils.uuid();
         String loginName = aimRequest.getAttactments().get("loginName");
         String welcome = "【系统消息】欢迎 ["+loginName+"] 进入聊天室 ";
-        System.out.println(welcome);
+        log.info(welcome);
         DataCenter.add(uuid,loginName,channel);
         AimResponse aimResponse = new AimResponse.Builer()
                 .code(200)

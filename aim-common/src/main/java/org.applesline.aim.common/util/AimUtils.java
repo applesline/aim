@@ -3,7 +3,10 @@ package org.applesline.aim.common.util;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import org.applesline.aim.common.AimProtocol;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -14,6 +17,8 @@ import java.util.UUID;
  */
 public class AimUtils {
 
+    private static final Logger log = LoggerFactory.getLogger(AimUtils.class);
+
     public static final String MSG_DELIMITER = "\n";
     public static final Gson GSON = new GsonBuilder().create();
 
@@ -22,7 +27,12 @@ public class AimUtils {
     }
 
     public static byte[] toBytes(AimProtocol aimProtocol) {
-        return wrapJson(aimProtocol).getBytes();
+        try {
+            return wrapJson(aimProtocol).getBytes("utf-8");
+        } catch (UnsupportedEncodingException ex) {
+            log.error("unsupported encoding",ex);
+        }
+        return null;
     }
 
     public static String uuid() {

@@ -9,6 +9,8 @@ import io.netty.channel.ChannelInboundHandlerAdapter;
 import org.applesline.aim.common.req.AimRequest;
 import org.applesline.aim.common.resp.AimResponse;
 import org.applesline.aim.common.util.AimUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * @author liuyaping
@@ -17,6 +19,8 @@ import org.applesline.aim.common.util.AimUtils;
 public class AimHandler extends ChannelInboundHandlerAdapter {
 
     protected static final String USER_DELIMITER = ",";
+
+    protected Logger log = LoggerFactory.getLogger(this.getClass());
 
     protected static final Gson GSON = new GsonBuilder().create();
 

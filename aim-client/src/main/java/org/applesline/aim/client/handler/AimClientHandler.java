@@ -42,9 +42,10 @@ public class AimClientHandler extends AimHandler {
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         AimResponse aimResponse = (AimResponse)msg;
+        log.info(GSON.toJson(aimResponse));
         switch (MessageType.getType(aimResponse.getType())) {
             case Login:
-                System.out.println(GSON.toJson(aimResponse));
+
                 aimFrame.getChatArea().append(aimResponse.getBody().toString()+"\n");
                 if (aimFrame.getSessionId() == null) {
                     aimFrame.setSessionId(aimResponse.getSessionId());
@@ -60,14 +61,12 @@ public class AimClientHandler extends AimHandler {
                 }
                 break;
             case Onchat:
-                System.out.println(GSON.toJson(aimResponse));
                 String name = aimResponse.getFrom().equalsIgnoreCase(aimFrame.getLoginName().getText())? "我": aimResponse.getFrom();
                 aimFrame.getChatArea().append("【"+name+"】\n"+aimResponse.getBody().toString()+"\n");
                 break;
             case Heartbeat:
                 break;
             case Logout:
-                System.out.println(GSON.toJson(aimResponse));
                 aimFrame.getChatArea().append(aimResponse.getBody().toString()+"\n");
                 break;
         }

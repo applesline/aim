@@ -31,7 +31,7 @@ public class AimServerHandler extends AimBaseHandler {
         commandInvoker.setAimRequest((AimRequest)msg);
         AimRequest aimRequest = (AimRequest)msg;
         AimResponse aimResponse;
-        System.out.println(GSON.toJson(aimRequest));
+        log.info(GSON.toJson(aimRequest));
         switch (MessageType.getType(aimRequest.getType())) {
             case Login:
                 AimResponse loginResponse = commandInvoker.invoker("loginCmd");
@@ -89,7 +89,6 @@ public class AimServerHandler extends AimBaseHandler {
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         ctx.channel().close();
-//        cause.printStackTrace();??
-//        System.out.println("IM error "+cause.getMessage());
+        log.error(cause.getMessage(),cause);
     }
 }

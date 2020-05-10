@@ -36,12 +36,7 @@ public class ClientFrame extends JFrame {
         this.setName("聊天主页");
         comboBox = new JComboBox();
 
-
-        /*String[] fruit = new String[]{"apple","banana"};
-        JList list = new JList(fruit);*/
-
-
-        this.setSize(600,470);
+        this.setSize(600,492);
         Container container = this.getContentPane();
         container.setLayout(new FlowLayout());
         chatArea = new JTextArea(18,52);
@@ -65,8 +60,6 @@ public class ClientFrame extends JFrame {
         JLabel sendTo = new JLabel("发送给:");
         container.add(sendTo);
         container.add(comboBox);
-//
-//        container.add(list);
 
         JScrollPane inputScroll = new JScrollPane(inputArea);
         inputScroll.setBounds(0,0,5,46);

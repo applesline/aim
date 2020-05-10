@@ -19,7 +19,7 @@ public class AimUtils {
 
     private static final Logger log = LoggerFactory.getLogger(AimUtils.class);
 
-    public static final String MSG_DELIMITER = "\n";
+    public static final String MSG_DELIMITER = System.getProperty("line.separator");
     public static final Gson GSON = new GsonBuilder().create();
 
     public static String wrapJson(AimProtocol aimProtocol) {

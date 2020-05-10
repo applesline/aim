@@ -85,8 +85,4 @@ public class AimRequest extends AimProtocol {
         }
     }
 
-    public static void main(String[] args) {
-        System.out.println(new Builder().sessionId("s").type((byte) 1).body(2).attactments(AimUtils.attachments("name","liuyaping")).build());
-    }
-
 }

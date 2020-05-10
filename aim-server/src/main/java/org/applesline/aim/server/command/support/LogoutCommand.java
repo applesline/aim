@@ -18,7 +18,7 @@ public class LogoutCommand extends AbstractCommand implements ICommand {
         DataCenter.remove(aimRequest.getSessionId());
 
         String logoutMsg = "【系统消息】["+aimRequest.getAttactments().get("from")+"] 退出聊天室 ";
-        System.out.println(logoutMsg);
+        log.info(logoutMsg);
         return new AimResponse.Builer()
                 .code(200)
                 .type(MessageType.Login.code)

@@ -2,6 +2,9 @@ package org.applesline.aim.common.resp;
 
 import org.applesline.aim.common.AimProtocol;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author liuyaping
  * 创建时间：2020年04月29日
@@ -9,7 +12,6 @@ import org.applesline.aim.common.AimProtocol;
 public class AimResponse extends AimProtocol {
 
     private int code;
-    private String from;
 
     public int getCode() {
         return code;
@@ -19,51 +21,43 @@ public class AimResponse extends AimProtocol {
         this.code = code;
     }
 
-    public String getFrom() {
-        return from;
+    private AimResponse(Builder builder) {
+        this.code = builder.code;
+        this.type = builder.type;
+        this.sessionId = builder.sessionId;
+        this.body = builder.body;
+        this.attactments = builder.attactments;
     }
 
-    public void setFrom(String from) {
-        this.from = from;
-    }
-
-    private AimResponse(Builer builer) {
-        this.code = builer.code;
-        this.type = builer.type;
-        this.from = builer.from;
-        this.sessionId = builer.sessionId;
-        this.body = builer.body;
-    }
-
-    public static class Builer {
+    public static class Builder {
         private int code;
         private byte type;
         private String sessionId;
-        private String from;
         private Object body;
+        private Map<String,String> attactments;
 
-        public Builer code(int code) {
+        public Builder code(int code) {
             this.code = code;
             return this;
         }
 
-        public Builer type(byte type) {
+        public Builder type(byte type) {
             this.type = type;
             return this;
         }
 
-        public Builer sessionId(String sessionId) {
+        public Builder sessionId(String sessionId) {
             this.sessionId = sessionId;
             return this;
         }
 
-        public Builer from(String from) {
-            this.from = from;
+        public Builder body(Object body) {
+            this.body = body;
             return this;
         }
 
-        public Builer body(Object body) {
-            this.body = body;
+        public Builder attactments(Map<String, String> attactments) {
+            this.attactments = attactments;
             return this;
         }
 

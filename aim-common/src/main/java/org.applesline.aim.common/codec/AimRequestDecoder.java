@@ -20,6 +20,6 @@ public class AimRequestDecoder extends MessageToMessageDecoder<String> {
 
     @Override
     protected void decode(ChannelHandlerContext ctx, String msg, List<Object> out) throws Exception {
-        out.add(GSON.fromJson(msg.toString(), AimRequest.class));
+        out.add(GSON.fromJson(msg, AimRequest.class));
     }
 }

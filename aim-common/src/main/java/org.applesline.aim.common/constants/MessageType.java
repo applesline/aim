@@ -5,8 +5,7 @@ package org.applesline.aim.common.constants;
  * 创建时间：2020年04月27日
  */
 public enum MessageType {
-    Logout((byte)-1),
-    Login((byte)0),
+
     Command((byte)1),
     Onchat((byte)2),
     Heartbeat((byte)3);

@@ -6,3 +6,5 @@ aim-common/target/
 aim-server/aim-server.iml
 aim-server/target/
 aim.iml
+aim-cli/aim-cli.iml
+aim-cli/target/

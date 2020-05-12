@@ -12,11 +12,7 @@ public class CommandInvoker {
 
     private Channel channel;
     private AimRequest aimRequest;
-    private CommandChooser commandChooser;
-
-    public CommandInvoker() {
-        commandChooser = new CommandChooser();
-    }
+    private static CommandChooser commandChooser = new CommandChooser();;
 
     public void setChannel(Channel channel) {
         this.channel = channel;

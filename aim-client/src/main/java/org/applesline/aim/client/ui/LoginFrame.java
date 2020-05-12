@@ -34,7 +34,7 @@ public class LoginFrame extends JFrame {
         portField = new JTextField(25);
         nickField = new JTextField(25);
         hostField.setText("localhost");
-        portField.setText("8080");
+        portField.setText("9658");
         JButton confirmBtn = new JButton("确定");
         JButton cancelBtn = new JButton("取消");
         this.add(hostLabel);

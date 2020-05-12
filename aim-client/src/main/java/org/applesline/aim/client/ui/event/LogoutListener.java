@@ -30,7 +30,7 @@ public class LogoutListener extends MouseAdapter {
         }
         ByteBuf byteBuf = aimChatHome.getChannel().alloc().directBuffer();
         AimRequest request = new AimRequest.Builder()
-                .type(MessageType.Logout.code)
+                .type(MessageType.Command.code)
                 .sessionId(aimChatHome.getSessionId())
                 .attactments(AimUtils.attachments("from",aimChatHome.getLoginName().getText()))
                 .build();

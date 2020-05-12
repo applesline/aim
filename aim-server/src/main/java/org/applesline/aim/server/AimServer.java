@@ -14,7 +14,7 @@ import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
 import io.netty.handler.codec.string.StringDecoder;
 import org.applesline.aim.common.codec.AimRequestDecoder;
-import org.applesline.aim.server.handler.AimBaseHandler;
+import org.applesline.aim.server.handler.AimCheckHandler;
 import org.applesline.aim.server.handler.AimServerHandler;
 import org.applesline.aim.server.handler.http.AimHttpHandler;
 import org.applesline.aim.server.handler.http.HttpRouter;
@@ -22,6 +22,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.InputStream;
+import java.nio.charset.Charset;
 import java.util.Properties;
 
 /**
@@ -74,9 +75,9 @@ public class AimServer {
                 .childHandler(new ChannelInitializer<NioSocketChannel>() {
                     public void initChannel(NioSocketChannel ch){
                         ch.pipeline().addLast(new LineBasedFrameDecoder(4096));
-                        ch.pipeline().addLast(new StringDecoder());
+                        ch.pipeline().addLast(new StringDecoder(Charset.forName("utf-8")));
                         ch.pipeline().addLast(new AimRequestDecoder());
-                        ch.pipeline().addLast(new AimBaseHandler());
+                        ch.pipeline().addLast(new AimCheckHandler());
                         ch.pipeline().addLast(new AimServerHandler());
                     }
                 });

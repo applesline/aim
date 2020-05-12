@@ -5,6 +5,7 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.handler.codec.http.*;
+import org.applesline.aim.common.constants.AimConstants;
 import org.applesline.aim.common.constants.MessageType;
 import org.applesline.aim.common.resp.AimResponse;
 import org.applesline.aim.common.util.AimUtils;
@@ -28,10 +29,10 @@ public class ChatHandler implements RouteHandler {
         for (Channel ch : DataCenter.USER_CHANNEL_MAP.values()) {
            try {
                ByteBuf byteBuf1 = ch.alloc().directBuffer();
-               AimResponse aimResponse = new AimResponse.Builer()
+               AimResponse aimResponse = new AimResponse.Builder()
                        .code(200)
                        .type(MessageType.Onchat.code)
-                       .from("admin")
+                       .attactments(AimUtils.attachments(AimConstants.LOGIN_NAME,"admin"))
                        .body(new String(bts,"utf8"))
                        .build();
                byteBuf1.writeBytes(AimUtils.toBytes(aimResponse));

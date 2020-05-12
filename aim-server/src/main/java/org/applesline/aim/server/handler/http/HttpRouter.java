@@ -1,5 +1,6 @@
 package org.applesline.aim.server.handler.http;
 
+import org.applesline.aim.common.util.PackageScanner;
 import org.applesline.aim.server.handler.http.annotation.Router;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,7 +28,7 @@ public class HttpRouter {
         String[] basePackages = config.getProperty("aim.server.http.basePackage").split(",");
         List<Class<?>> classes = new ArrayList<>();
         for (String basePackage : basePackages) {
-            classes.addAll(PackageScanner.scan(basePackage));
+            classes.addAll(PackageScanner.scan(PackageScanner.PROJECT_AIM_SERVER,basePackage));
         }
 
         log.info("init supported http interface");

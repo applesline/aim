@@ -2,6 +2,7 @@ package org.applesline.aim.client.ui.event;
 
 import io.netty.buffer.ByteBuf;
 import org.applesline.aim.client.ClientFrame;
+import org.applesline.aim.common.constants.AimConstants;
 import org.applesline.aim.common.constants.MessageType;
 import org.applesline.aim.common.req.AimRequest;
 import org.applesline.aim.common.util.AimUtils;
@@ -38,8 +39,8 @@ public class ChatListener extends MouseAdapter {
             return;
         }
         ByteBuf byteBuf = aimFrame.getChannel().alloc().directBuffer();
-        Map<String,String> attachments = AimUtils.attachments("to",to);
-        attachments.put("from",aimFrame.getLoginName().getText());
+        Map<String,String> attachments = AimUtils.attachments(AimConstants.TO,to);
+        attachments.put(AimConstants.FROM,aimFrame.getLoginName().getText());
         AimRequest requestParam = new AimRequest
                 .Builder()
                 .type(MessageType.Onchat.code)

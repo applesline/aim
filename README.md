@@ -2,18 +2,18 @@
 ```
 A pure java chatroom based on netty
 ```
+---
 
 #### 一、快速体验
 
 > ##### 1.1 命令行聊天工具aim-cli资源
 
-- 下载地址：[aim-cli.jar](ftp://istart.club/aim-cli/aim-cli.jar)
-- 视频教程：[aim-cli使用教程](ftp://istart.club/aim-cli/aim-cli%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.mp4)
+- 下载地址：[aim-cli.jar](http://istart.club/aim-cli/aim-cli.jar)
+- 视频教程：[aim-cli使用教程](http://istart.club/aim-cli/aim-cli%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.mp4)
 
 > ##### 1.2 启动aim-cli
 ```
 java -jar aim-cli.jar
-
 ```
 
 > ##### 1.3 使用aim-cli登陆聊天服务器

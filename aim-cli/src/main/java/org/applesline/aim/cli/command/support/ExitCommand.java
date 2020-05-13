@@ -6,6 +6,7 @@ import org.applesline.aim.cli.command.AbstractCliCommand;
 import org.applesline.aim.cli.command.AimCommand;
 import org.applesline.aim.cli.command.annotation.Cmd;
 import org.applesline.aim.common.constants.AimConstants;
+import org.applesline.aim.common.constants.ClientType;
 import org.applesline.aim.common.constants.MessageType;
 import org.applesline.aim.common.constants.SupportedCmd;
 import org.applesline.aim.common.req.AimRequest;
@@ -21,7 +22,8 @@ import java.util.Map;
 public class ExitCommand extends AbstractCliCommand implements AimCommand {
     @Override
     public void execute(String[] params) {
-        Map<String,String> attachments = AimUtils.attachments(AimConstants.FROM,(String)holder.get().get("sessionId"));
+        Map<String,String> attachments = AimUtils.attachments(AimConstants.FROM,(String)holder.get().get(AimConstants.LOGIN_NAME));
+        attachments.put(AimConstants.CLIENT_TYPE, ClientType.AIM_CLI);
         attachments.put(AimConstants.COMMAND, SupportedCmd.LOGOUT_CMD);
 
         Channel channel = (Channel) holder.get().get("channel");

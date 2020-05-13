@@ -18,20 +18,23 @@ java -jar aim-cli.jar
 
 > ##### 1.3 使用aim-cli登陆聊天服务器
 
+###### 1.3.1 标准登陆
 ```
 [aim@nologin]# login -h istart.club -p 9658 -n test
-
 ```
->> 登陆参数说明：
-- -h  服务器地址，istart.club已经部署过aim-server，aim-cli可直接登陆
-- -p  服务端口，9658（意为：965吧，告别996！！！）
-- -n  用户昵称，自定义即可
----
->> 极简登陆
+
+###### 1.3.2 极简登陆
 ```
 [aim@nologin]# login test  #意味着使用test昵称连接到 istart.club:9658 服务器
 ```
+
+###### 1.3.3 登陆参数说明：
+- -h  服务器地址，istart.club已经部署过aim-server，aim-cli可直接登陆
+- -p  服务端口，9658（意为：965吧，告别996！！！）
+- -n  用户昵称，自定义即可
+
 ---
+
 
 #### 二、源码安装
 

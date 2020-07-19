@@ -8,10 +8,10 @@ A pure java chatroom based on netty
 
 > ##### 1.1 命令行聊天工具aim-cli资源
 
-- 下载地址：[aim-cli.jar](http://istart.club/aim-cli/aim-cli.jar)
-- 视频教程：[aim-cli使用教程](http://istart.club/aim-cli/aim-cli%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.mp4)
+- 下载地址：[aim-cli.jar](https://www.istart.club/resources/aim-cli.jar)
+- 视频教程：[aim-cli使用教程](https://www.istart.club/video/aim-cli%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.mp4)
 - 效果图:
-![aim](http://istart.club/20200513135343.png "aim-cli")
+![aim](https://www.istart.club/resources/20200513135343.png "aim-cli")
 
 > ##### 1.2 启动aim-cli
 ```
@@ -22,12 +22,12 @@ java -jar aim-cli.jar
 
 ###### 1.3.1 标准登陆
 ```
-[aim@nologin]# login -h istart.club -p 9658 -n test
+[aim@nologin]# login -h hostname -p 9658 -n test
 ```
 
 ###### 1.3.2 极简登陆
 ```
-[aim@nologin]# login test  #意味着使用test昵称连接到 istart.club:9658 服务器
+[aim@nologin]# login test  #意味着使用test昵称连接到 istart.club:9658 服务器 （暂不可用）
 ```
 
 ###### 1.3.3 登陆参数说明：

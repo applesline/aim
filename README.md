@@ -10,8 +10,7 @@ A pure java chatroom based on netty
 
 - 下载地址：[aim-cli.jar](https://www.istart.club/resources/aim-cli.jar)
 - 视频教程：[aim-cli使用教程](https://www.istart.club/video/aim-cli%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B.mp4)
-- 效果图:
-![aim](https://www.istart.club/resources/20200513135343.png "aim-cli")
+- 效果图:   [aim效果图](https://www.istart.club/resources/20200513135343.png)
 
 > ##### 1.2 启动aim-cli
 ```

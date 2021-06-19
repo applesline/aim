@@ -66,6 +66,8 @@ java -jar aim-cli-jar-with-dependencies.jar
 java -jar aim-cli-jar-with-dependencies.jar
 ```
 
+---
+
 #### 三、功能特性
 - 私有协议
 - 对象解码器

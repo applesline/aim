@@ -38,6 +38,33 @@ java -jar aim-cli.jar
 
 
 #### 二、源码安装
+> ##### 2.1 下载源码
+```
+git clone https://github.com/applesline/aim.git
+```
+> ##### 2.2 编译源码
+```
+mvn clean install   #aim-server默认监听9658端口，如果需要改为其他端口，修改application.properties中的配置即可
+```
+> ##### 2.3 编译结果
+```
+aim-cli-jar-with-dependencies.jar       #命令行客户端
+aim-client-jar-with-dependencies.jar    #图形化客户端
+aim-server-jar-with-dependencies.jar    #服务端，默认监听在9658端口
+```
+> ##### 2.4 启动服务端
+```
+java -jar aim-server-jar-with-dependencies.jar  
+```
+
+> ##### 2.5 启动命令行客户端
+```
+java -jar aim-cli-jar-with-dependencies.jar
+```
+> ##### 2.6 启动图形化客户端
+```
+java -jar aim-cli-jar-with-dependencies.jar
+```
 
 #### 三、功能特性
 - 私有协议

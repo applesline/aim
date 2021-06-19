@@ -63,7 +63,7 @@ java -jar aim-cli-jar-with-dependencies.jar
 ```
 > ##### 2.6 启动图形化客户端
 ```
-java -jar aim-cli-jar-with-dependencies.jar
+java -jar aim-client-jar-with-dependencies.jar
 ```
 
 ---
